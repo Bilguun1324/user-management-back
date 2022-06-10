@@ -1,0 +1,22 @@
+type User {
+  _id: String
+  firstName: String
+  lastName: String
+  email: String
+}
+
+type Mutation {
+  addUser(firstName: String, lastName: String, email: String): User
+  deleteUser(_id: String): User
+  updateUser(
+    _id: String
+    firstName: String
+    lastName: String
+    email: String
+  ): User
+}
+
+type Query {
+  getUsers(firstName: String, lastName: String, email: String): [User]
+  getUser(_id: String): User
+}
