@@ -1,0 +1,25 @@
+type memberType {
+  uid: String,
+  permission: String
+}
+
+input member {
+  uid: String,
+  permission: String
+}
+
+type Group {
+  _id: String
+  name: String
+  members: [memberType]!
+}
+
+type Mutation {
+  addGroup(name: String, members: [member]): Group
+  inviteUser(uid: String, permission: String, _id: String): Group
+}
+
+type Query {
+  getGroups(name: String): [Group]
+  getGroup(_id: String): Group
+}

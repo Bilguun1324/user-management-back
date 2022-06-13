@@ -3,20 +3,21 @@ type User {
   firstName: String
   lastName: String
   email: String
+  role: String
 }
 
 type Mutation {
-  addUser(firstName: String, lastName: String, email: String): User
-  deleteUser(_id: String): User
+  addUser(firstName: String, lastName: String, email: String, role: String): User
   updateUser(
     _id: String
     firstName: String
     lastName: String
     email: String
+    role: String
   ): User
 }
 
 type Query {
-  getUsers(firstName: String, lastName: String, email: String): [User]
+  getUsers(firstName: String, lastName: String, email: String, role: String): [User]
   getUser(_id: String): User
 }

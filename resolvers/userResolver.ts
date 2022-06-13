@@ -20,16 +20,9 @@ const getUsers = async (_: any, params: any) => {
   return users
 };
 
-// const updateUser = async(_: any, { _id, params } : any) => {
-//   try {
-//     const user = await User.updateOne({ 
-      
-//     }, {
-//       $set: params
-//     })
-//     return user ? true : false
-//   } catch(err) {
-//     return false
-//   }
-// }
-export { addUser, getUser, getUsers };
+const updateUser = async (_: any, { _id, params }: any) => {
+  const user = await User.findByIdAndUpdate(_id, params)
+  return user
+}
+
+export { addUser, getUser, getUsers, updateUser };

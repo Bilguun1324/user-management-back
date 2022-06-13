@@ -1,11 +1,17 @@
-import { addUser, getUser, getUsers } from './userResolver'
+import { addUser, getUser, getUsers, updateUser } from './userResolver'
+import { addGroup, inviteUser, getGroups, getGroup } from './groupResolver'
 
 export default {
     Query: {
         getUsers,
-        getUser
+        getUser,
+        getGroup,
+        getGroups
     },
     Mutation: {
         addUser,
+        updateUser,
+        addGroup,
+        inviteUser
     }
 }

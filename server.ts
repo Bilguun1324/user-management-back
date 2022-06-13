@@ -11,7 +11,6 @@ const server = new ApolloServer({
 });
 
 const uri: any = process.env.URI;
-console.log(uri)
 mongoose.connect(uri);
 const connection = mongoose.connection;
 
