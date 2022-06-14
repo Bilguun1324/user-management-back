@@ -11,11 +11,12 @@ input member {
 type Group {
   _id: String
   name: String
+  description: String
   members: [memberType]!
 }
 
 type Mutation {
-  addGroup(name: String, members: [member]): Group
+  addGroup(name: String, members: [member], description: String): Group
   inviteUser(uid: String, permission: String, _id: String): Group
 }
 
